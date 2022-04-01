@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
 '''
 __author__ = "Bekir Bostanci"
 __license__ = "BSD"
