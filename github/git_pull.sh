@@ -32,5 +32,31 @@ if [ "$CONFLICTS" -gt 0 ] ; then
    return 1
 fi
 
+echo "-----------------------------------------------------------------------------------------------------"
+echo "-------------------------------------pull real_to_sim_env--------------------------------------------"
+echo "-----------------------------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/ARG/real_to_sim_env
+git checkout main
+git pull
+
+CONFLICTS=$(git ls-files -u | wc -l)
+if [ "$CONFLICTS" -gt 0 ] ; then
+   echo "There is conflict in real_to_sim_env. Aborting"
+   return 1
+fi
+
+echo "-----------------------------------------------------------------------------------------------"
+echo "-------------------------------------pull pokingbot--------------------------------------------"
+echo "-----------------------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/ARG/pokingbot
+git checkout main
+git pull
+
+CONFLICTS=$(git ls-files -u | wc -l)
+if [ "$CONFLICTS" -gt 0 ] ; then
+   echo "There is conflict in pokingbot. Aborting"
+   return 1
+fi
+
 cd ~/tutorial
 return 0
