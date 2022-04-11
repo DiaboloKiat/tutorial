@@ -71,19 +71,44 @@ if [ "$CONFLICTS" -gt 0 ] ; then
    return 1
 fi
 
-# echo "-----------------------------------------------------------------------------------------------"
-# echo "-------------------------------------pull pokingbot--------------------------------------------"
-# echo "-----------------------------------------------------------------------------------------------"
-# cd ~/tutorial/catkin_ws/src/ARG/pokingbot
-# git checkout main
-# git pull
+echo "-----------------------------------------------------------------------------------------------"
+echo "-------------------------------------pull turtlebot3-------------------------------------------"
+echo "-----------------------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/Turtlebot/turtlebot3
+git checkout master
+git pull
 
-# CONFLICTS=$(git ls-files -u | wc -l)
-# if [ "$CONFLICTS" -gt 0 ] ; then
-#    echo "There is conflict in pokingbot. Aborting"
-#    return 1
-# fi
+CONFLICTS=$(git ls-files -u | wc -l)
+if [ "$CONFLICTS" -gt 0 ] ; then
+   echo "There is conflict in turtlebot3. Aborting"
+   return 1
+fi
 
+echo "-----------------------------------------------------------------------------------------------"
+echo "-------------------------------------pull turtlebot3_simulations-------------------------------"
+echo "-----------------------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/Turtlebot/turtlebot3_simulations
+git checkout master
+git pull
+
+CONFLICTS=$(git ls-files -u | wc -l)
+if [ "$CONFLICTS" -gt 0 ] ; then
+   echo "There is conflict in turtlebot3_simulations. Aborting"
+   return 1
+fi
+
+echo "-----------------------------------------------------------------------------------------------"
+echo "-------------------------------------pull advoard_localization---------------------------------"
+echo "-----------------------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/Turtlebot/advoard_localization
+git checkout master
+git pull
+
+CONFLICTS=$(git ls-files -u | wc -l)
+if [ "$CONFLICTS" -gt 0 ] ; then
+   echo "There is conflict in advoard_localization. Aborting"
+   return 1
+fi
 
 cd ~/tutorial
 return 0

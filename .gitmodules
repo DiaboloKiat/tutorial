@@ -12,3 +12,12 @@
 [submodule "catkin_ws/src/Pozyx/pozyx_simulation"]
 	path = catkin_ws/src/Pozyx/pozyx_simulation
 	url = git@github.com:DiaboloKiat/pozyx_simulation.git
+[submodule "catkin_ws/src/Turtlebot/turtlebot3"]
+	path = catkin_ws/src/Turtlebot/turtlebot3
+	url = git@github.com:DiaboloKiat/turtlebot3.git
+[submodule "catkin_ws/src/Turtlebot/turtlebot3_simulations"]
+	path = catkin_ws/src/Turtlebot/turtlebot3_simulations
+	url = git@github.com:DiaboloKiat/turtlebot3_simulations.git
+[submodule "catkin_ws/src/Turtlebot/advoard_localization"]
+	path = catkin_ws/src/Turtlebot/advoard_localization
+	url = git@github.com:DiaboloKiat/advoard_localization.git
