@@ -9,3 +9,6 @@
 [submodule "catkin_ws/src/ARG/pokingbot"]
 	path = catkin_ws/src/ARG/pokingbot
 	url = git@github.com:ARG-NCTU/pokingbot.git
+[submodule "catkin_ws/src/Pozyx/pozyx_simulation"]
+	path = catkin_ws/src/Pozyx/pozyx_simulation
+	url = git@github.com:DiaboloKiat/pozyx_simulation.git
