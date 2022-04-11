@@ -58,5 +58,32 @@ if [ "$CONFLICTS" -gt 0 ] ; then
    return 1
 fi
 
+echo "-----------------------------------------------------------------------------------------------"
+echo "-------------------------------------pull pozyx_simulation-------------------------------------"
+echo "-----------------------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/Pozyx/pozyx_simulation
+git checkout master
+git pull
+
+CONFLICTS=$(git ls-files -u | wc -l)
+if [ "$CONFLICTS" -gt 0 ] ; then
+   echo "There is conflict in pozyx_simulation. Aborting"
+   return 1
+fi
+
+# echo "-----------------------------------------------------------------------------------------------"
+# echo "-------------------------------------pull pokingbot--------------------------------------------"
+# echo "-----------------------------------------------------------------------------------------------"
+# cd ~/tutorial/catkin_ws/src/ARG/pokingbot
+# git checkout main
+# git pull
+
+# CONFLICTS=$(git ls-files -u | wc -l)
+# if [ "$CONFLICTS" -gt 0 ] ; then
+#    echo "There is conflict in pokingbot. Aborting"
+#    return 1
+# fi
+
+
 cd ~/tutorial
 return 0
