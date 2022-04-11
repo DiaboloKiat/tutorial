@@ -27,9 +27,43 @@ echo "--------------------------------------------------------------------------
 echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< pull success >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 echo "-------------------------------------------------------------------------------"
 
+# ---------- Turtlebot3 ---------- #
+echo "-------------------------------------------------------------------------------"
+echo "******************************* push turtlebot3 *******************************"
+echo "-------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/Turtlebot/turtlebot3
+git checkout noetic-devel
+git add -A
+git commit -m "${message} on turtlebot3"
+git push
 
+echo "-------------------------------------------------------------------------------"
+echo "************************* push turtlebot3_simulations *************************"
+echo "-------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/Turtlebot/turtlebot3_simulations
+git checkout noetic-devel
+git add -A
+git commit -m "${message} on turtlebot3_simulations"
+git push
 
+echo "-------------------------------------------------------------------------------"
+echo "************************** push advoard_localization **************************"
+echo "-------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/Turtlebot/advoard_localization
+git checkout master
+git add -A
+git commit -m "${message} on advoard_localization"
+git push
 
+# ---------- Pozyx ---------- #
+echo "-------------------------------------------------------------------------------"
+echo "**************************** push pozyx_simulation ****************************"
+echo "-------------------------------------------------------------------------------"
+cd ~/tutorial/catkin_ws/src/Pozyx/pozyx_simulation
+git checkout master
+git add -A
+git commit -m "${message} on pozyx_simulation"
+git push
 
 echo "-------------------------------------------------------------------------------"
 echo "******************************** push tutorial ********************************"
