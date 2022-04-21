@@ -1,0 +1,37 @@
+cmd "01_core" {
+    exec = "roscore";
+    host = "localhost";
+}
+
+cmd "02_turtlebot3_world" {
+    exec = "roslaunch turtlebot3_gazebo turtlebot3_world.launch";
+    host = "localhost";
+}
+
+cmd "03_turtlebot3_navigation" {
+    exec = "roslaunch turtlebot3_navigation turtlebot3_navigation.launch ";
+    host = "localhost";
+}
+
+cmd "04_uwb_anchors_set" {
+    exec = "roslaunch pozyx_simulation uwb_anchors_set.launch";
+    host = "localhost";
+}
+
+cmd "05_uwb_simulation" {
+    exec = "rosrun pozyx_simulation uwb_simulation.py";
+    host = "localhost";
+}
+
+cmd "06_kalman_filter_localization" {
+    exec = "rosrun advoard_localization kalman_filter_localization.py ";
+    host = "localhost";
+}
+
+script "start_turtlebot_uwb" 
+{
+    start cmd "01_core" wait "running";
+    wait ms 1500;
+    start cmd "02_turtlebot3_world" wait "running";
+    wait ms 1500;
+}
